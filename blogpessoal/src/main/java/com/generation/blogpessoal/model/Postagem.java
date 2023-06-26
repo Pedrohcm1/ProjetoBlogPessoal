@@ -30,5 +30,38 @@ public class Postagem {
 	
 	@UpdateTimestamp
 	private LocalDateTime data;
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return this.titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getTexto() {
+		return this.texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+	public LocalDateTime getData() {
+		return this.data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	
 	
 }

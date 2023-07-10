@@ -1,15 +1,9 @@
 package com.generation.blogpessoal.controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.List;
 import java.util.Optional;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
@@ -83,18 +77,4 @@ public class UsuarioController {
 	}
 	
 	
-
-	  @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-	 
-	 	@Test
-		@DisplayName("Cadastrar Um Usuário")
-		public void deveCriarUmUsuario() {
-
-			HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(
-					new Usuario(0L, "Paulo Antunes", "paulo_antunes@email.com.br", "12345678", "-"));
-
-			ResponseEntity<Usuario> corpoResposta = testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST,
-					corpoRequisicao, Usuario.class);
-
-			assertEquals(HttpStatus.CREATED, corpoResposta.getStatusCode());}
 }

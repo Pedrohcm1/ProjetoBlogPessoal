@@ -60,10 +60,10 @@ public class UsuarioService {
 
 	public Optional<UsuarioLogin> autenticarUsuario(Optional<UsuarioLogin> usuarioLogin) {
         
-        // Gera o Objeto de autenticação
+        // Gera o Objeto de autenticação e guarda na variavel credenciais
 		var credenciais = new UsernamePasswordAuthenticationToken(usuarioLogin.get().getUsuario(), usuarioLogin.get().getSenha());
 		
-        // Autentica o Usuario
+        // Responsavel pela autenticação do usuário
 		Authentication authentication = authenticationManager.authenticate(credenciais);
         
         // Se a autenticação foi efetuada com sucesso
